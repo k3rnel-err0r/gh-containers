@@ -11,6 +11,9 @@ jobs:
   test:
     environment: testing
     runs-on: ubuntu-latest
+    # We use a container to ensure that the environment is consistent
+    container:
+      image: node:18
     env:
       MONGODB_CONNECTION_PROTOCOL: mongodb+srv
       MONGODB_CLUSTER_ADDRESS: nasacluster.wifdp.mongodb.net
